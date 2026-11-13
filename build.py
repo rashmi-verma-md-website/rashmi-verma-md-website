@@ -21,7 +21,7 @@ CONFIG = {
     "fax": "",            # e.g. "(516) 555-0101" — leave empty to hide
     "address": "",        # e.g. "123 Main Street, Suite 200, Syosset, NY 11791"
     "hours": "",          # e.g. "Monday to Friday, 8:30 am to 5:00 pm"
-    "opening": "January 2027",
+    "opening": "",         # e.g. "January 2027"; empty shows "opening soon"
     # Google Form (from the practice's Google Workspace, covered by the BAA).
     # Leave empty to show the email fallback instead of a form button.
     "waitlist_form_url": "",
@@ -59,7 +59,7 @@ def contact_lines():
         rows.append(f'<li><span>Fax</span>{e(c["fax"])}</li>')
     rows.append(f'<li><span>Email</span><a href="mailto:{c["email"]}">{c["email"]}</a></li>')
     rows.append(
-        f'<li><span>Address</span>{e(c["address"]) if c["address"] else "Opening " + c["opening"] + " on Long Island, New York"}</li>'
+        f'<li><span>Address</span>{e(c["address"]) if c["address"] else "Opening soon on Long Island, New York"}</li>'
     )
     if c["hours"]:
         rows.append(f'<li><span>Hours</span>{e(c["hours"])}</li>')
@@ -101,7 +101,7 @@ def page(filename, title, description, body, active=None):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="banner">Opening {c['opening']} on Long Island. <a href="contact.html#waitlist">Join the waitlist</a> and we'll call you as soon as scheduling opens.</div>
+<div class="banner">Opening soon on Long Island. <a href="contact.html#waitlist">Join the waitlist</a> and we'll call you as soon as scheduling opens.</div>
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="index.html"><span class="wm-name">{c['name']}</span><span class="wm-tag">{c['tagline']}</span></a>
@@ -194,7 +194,7 @@ PAGES["index.html"] = (
   <div><h2>Referred by your doctor?</h2><p>Most patients are referred by their eye doctor, neurologist, or primary care physician. Self-referrals are welcome too. See <a href="new-patients.html">New Patients</a> for what to expect.</p></div>
   <div><h2>Referring a patient?</h2><p>Dr. Verma sends a consultation note to the referring physician after every new visit. See <a href="for-physicians.html">For Physicians</a> for how to refer.</p></div>
 </div></section>
-""" + cta_band("Ready to take the next step?", f"Dr. Verma's office opens in {CONFIG['opening']}. Join the waitlist and we will call you as soon as appointments open."),
+""" + cta_band("Ready to take the next step?", "Dr. Verma's office is opening soon. Join the waitlist and we will call you as soon as appointments open."),
 )
 
 PAGES["about.html"] = (
@@ -346,7 +346,7 @@ PAGES["new-patients.html"] = (
 <section class="page-head"><div class="wrap narrow">
   <p class="eyebrow">New patients</p>
   <h1>Preparing for your visit</h1>
-  <p class="lead">Dr. Verma's office opens in {CONFIG['opening']}. Join the waitlist now and we'll call you to schedule as soon as appointments open.</p>
+  <p class="lead">Dr. Verma's office is opening soon. Join the waitlist now and we'll call you to schedule as soon as appointments open.</p>
   <div class="btn-row">{waitlist_cta()}</div>
 </div></section>
 <section class="section"><div class="wrap two-col">
@@ -399,7 +399,7 @@ PAGES["for-physicians.html"] = (
   <div>
     <h2>How to refer</h2>
     <ol>
-      <li>Send the referral to our office{(" by fax at " + e(CONFIG['fax'])) if CONFIG['fax'] else ""}{(" or call " + e(CONFIG['phone'])) if CONFIG['phone'] else ""}. Referral lines open when the office opens in {CONFIG['opening']}.</li>
+      <li>Send the referral to our office{(" by fax at " + e(CONFIG['fax'])) if CONFIG['fax'] else ""}{(" or call " + e(CONFIG['phone'])) if CONFIG['phone'] else ""}. Referral lines open when the office opens.</li>
       <li>Include the reason for referral, recent eye exam notes, visual fields or OCT if available, and any MRI or CT reports.</li>
       <li>We contact the patient to schedule and confirm insurance.</li>
     </ol>
@@ -426,12 +426,12 @@ PAGES["for-physicians.html"] = (
 
 PAGES["contact.html"] = (
     "Contact",
-    f"Contact Dr. Rashmi Verma's neuro-ophthalmology office on Long Island, NY, opening {CONFIG['opening']}. Join the appointment waitlist.",
+    f"Contact Dr. Rashmi Verma's neuro-ophthalmology office on Long Island, NY, opening soon. Join the appointment waitlist.",
     f"""
 <section class="page-head"><div class="wrap narrow">
   <p class="eyebrow">Get in touch</p>
   <h1>Contact</h1>
-  <p class="lead">The office opens in {CONFIG['opening']} on Long Island, New York.</p>
+  <p class="lead">The office is opening soon on Long Island, New York.</p>
 </div></section>
 <section class="section"><div class="wrap two-col">
   <div id="waitlist">
