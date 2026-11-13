@@ -24,7 +24,7 @@ CONFIG = {
     "opening": "",         # e.g. "January 2027"; empty shows "opening soon"
     # Google Form (from the practice's Google Workspace, covered by the BAA).
     # Leave empty to show the email fallback instead of a form button.
-    "waitlist_form_url": "",
+    "waitlist_form_url": "https://forms.gle/c28T2jiUxJEGUNZc8",
     "legal_entity": "",   # PLLC legal name once formed
     "year": "2026",
 }
