@@ -25,6 +25,7 @@ CONFIG = {
     # Google Form (from the practice's Google Workspace, covered by the BAA).
     # Leave empty to show the email fallback instead of a form button.
     "waitlist_form_url": "https://forms.gle/c28T2jiUxJEGUNZc8",
+    "jobs_form_url": "https://forms.gle/1Eg6ckXyhyy7jyCj7",
     "legal_entity": "",   # PLLC legal name once formed
     "year": "2026",
 }
@@ -123,6 +124,8 @@ def page(filename, title, description, body, active=None):
       {contact_lines()}
     </div>
     <div>
+      <p class="footer-head">Careers</p>
+      <p>We're hiring part-time ophthalmic technicians and front desk staff. <a href="careers.html">See open positions</a>.</p>
       <p class="footer-head">Emergencies</p>
       <p>For sudden vision loss, new double vision, or other sudden neurological symptoms, call 911 or go to the nearest emergency room.</p>
     </div>
@@ -509,6 +512,43 @@ PAGES["good-faith-estimate.html"] = (
     <li>Make sure to save a copy or picture of your Good Faith Estimate.</li>
   </ul>
   <p>For questions or more information about your right to a Good Faith Estimate, visit <a href="https://www.cms.gov/nosurprises">www.cms.gov/nosurprises</a> or call 1-800-985-3059.</p>
+</div></section>
+""",
+)
+
+PAGES["careers.html"] = (
+    "Careers",
+    "Join Dr. Rashmi Verma's new neuro-ophthalmology office on Long Island. Hiring part-time ophthalmic technicians and front desk / medical assistants.",
+    f"""
+<section class="page-head"><div class="wrap narrow">
+  <p class="eyebrow">Careers</p>
+  <h1>Join our team</h1>
+  <p class="lead">Dr. Verma is opening a new neuro-ophthalmology office on Long Island and is building a small, close-knit team. Everyone helps patients through their whole visit, from check-in to testing.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="{e(CONFIG['jobs_form_url'])}" target="_blank" rel="noopener">Apply Now</a></div>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Open positions</h2>
+  <div class="cards two">
+    <article class="card"><p class="tag">Part-time</p><h3>Ophthalmic Technician</h3><p>Patient work-ups, visual acuity and pupils, OCT imaging and visual field testing, plus front desk and phones on clinic days. COA or COT certification preferred; we will train the right person on our equipment.</p></article>
+    <article class="card"><p class="tag">Part-time</p><h3>Front Desk / Medical Assistant</h3><p>Greeting and checking in patients, scheduling, insurance verification, and phones, plus helping with testing once trained. Medical office experience preferred.</p></article>
+  </div>
+  <div class="two-col">
+    <div>
+      <h2>What to expect</h2>
+      <ul>
+        <li>Part-time schedule on set clinic days</li>
+        <li>Occasional evening or weekend clinics</li>
+        <li>Paid holidays and paid time off</li>
+        <li>Hands-on training in neuro-ophthalmic testing</li>
+      </ul>
+    </div>
+    <div>
+      <h2>How to apply</h2>
+      <p>Fill out the short application form. We review every application and will contact you to set up an interview.</p>
+      <p><a class="btn btn-primary" href="{e(CONFIG['jobs_form_url'])}" target="_blank" rel="noopener">Apply Now</a></p>
+      <p class="small">{CONFIG['name']} is an equal opportunity employer.</p>
+    </div>
+  </div>
 </div></section>
 """,
 )
