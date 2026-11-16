@@ -46,7 +46,7 @@ li { margin-bottom: .35em; }
 .menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font: inherit; color: var(--navy); }
 
 .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 600; color: var(--gold); margin-bottom: .8em; }
-.lead { font-size: 1.15rem; color: var(--muted); }
+.lead { font-size: 1.2rem; font-weight: 500; color: var(--ink); border-left: 4px solid var(--gold); padding-left: 16px; }
 
 .hero, .page-head { padding: 64px 0 48px; background: linear-gradient(180deg, var(--bg-alt), #fff); }
 .hero-grid { display: grid; grid-template-columns: 1.3fr .9fr; gap: 48px; align-items: center; }
