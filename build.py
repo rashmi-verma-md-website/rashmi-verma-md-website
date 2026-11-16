@@ -104,7 +104,7 @@ def page(filename, title, description, body, active=None):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="banner">Opening soon on Long Island. <a href="contact.html#waitlist">Join the waitlist</a> and we'll call you as soon as scheduling opens.</div>
+<div class="banner">Opening soon on Long Island. We are not yet seeing patients. <a href="contact.html#waitlist">Join the waitlist</a> and we'll contact you when scheduling opens.</div>
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="index.html"><span class="wm-name">{c['name']}</span><span class="wm-tag">{c['tagline']}</span></a>
@@ -267,7 +267,7 @@ PAGES["about.html"] = (
   </ol>
 """ + ('<p class="pdf-link"><a class="text-link" href="files/a-typical-day-in-neuro-ophthalmology.pdf">Featured reading: A Typical Day in Neuro-Ophthalmology (PDF) →</a></p>' if os.path.exists(os.path.join(HERE, "assets", "files", "a-typical-day-in-neuro-ophthalmology.pdf")) else "") + """
 </div></section>
-""" + cta_band("Schedule a consultation", "Dr. Verma personally sees every patient. Join the waitlist and her office will call you when scheduling opens."),
+""" + cta_band("Join the waitlist", "The office is not yet seeing patients. Join the waitlist and we'll contact you when scheduling opens."),
 )
 
 COND = [
@@ -341,7 +341,7 @@ PAGES["services.html"] = (
     <li><h3>Coordinated follow-up</h3><p>If you need monitoring or co-management, Dr. Verma coordinates directly with your care team.</p></li>
   </ol>
 </div></section>
-""" + cta_band("Ready to schedule?", "Dr. Verma personally sees every patient. Join the waitlist and we'll call you when scheduling opens."),
+""" + cta_band("Interested in seeing Dr. Verma?", "The office is not yet seeing patients. Join the waitlist and we'll contact you when scheduling opens."),
 )
 
 PAGES["new-patients.html"] = (
@@ -351,7 +351,7 @@ PAGES["new-patients.html"] = (
 <section class="page-head"><div class="wrap narrow">
   <p class="eyebrow">New patients</p>
   <h1>Preparing for your visit</h1>
-  <p class="lead">Dr. Verma's office is opening soon. Join the waitlist now and we'll call you to schedule as soon as appointments open.</p>
+  <p class="lead">Dr. Verma's office is opening soon and is not yet seeing patients. Join the waitlist and we'll contact you when appointments open. The information below describes visits once the office is open.</p>
   <div class="btn-row">{waitlist_cta()}</div>
 </div></section>
 <section class="section"><div class="wrap two-col">
@@ -380,7 +380,7 @@ PAGES["new-patients.html"] = (
   </div>
   <div>
     <h2>Workers' Compensation</h2>
-    <p>We accept New York State Workers' Compensation for work-related eye and vision injuries. Please bring your WCB claim number to your first visit.</p>
+    <p>Once the office opens, we will accept New York State Workers' Compensation for work-related eye and vision injuries. Please bring your WCB claim number to your first visit.</p>
     <h2>Telehealth</h2>
     <p>Some follow-up visits can be done by secure video. We will let you know if your visit qualifies.</p>
   </div>
@@ -402,7 +402,8 @@ PAGES["for-physicians.html"] = (
 </div></section>
 <section class="section"><div class="wrap two-col">
   <div>
-    <h2>How to refer</h2>
+    <div class="note"><h3>Not yet accepting referrals</h3><p>The office is opening soon and is not yet seeing patients. Until then, please continue to refer patients to their current care. Patients can join our waitlist, and we will post referral details here when the office opens.</p></div>
+    <h2>How to refer, once we open</h2>
     <ol>
       <li>Send the referral to our office{(" by fax at " + e(CONFIG['fax'])) if CONFIG['fax'] else ""}{(" or call " + e(CONFIG['phone'])) if CONFIG['phone'] else ""}. Referral lines open when the office opens.</li>
       <li>Include the reason for referral, recent eye exam notes, visual fields or OCT if available, and any MRI or CT reports.</li>
@@ -462,9 +463,9 @@ PAGES["privacy.html"] = (
 <section class="page-head"><div class="wrap narrow"><h1>Privacy Policy</h1></div></section>
 <section class="section"><div class="wrap narrow prose">
   <h2>Website privacy</h2>
-  <p>{CONFIG['name']} respects your privacy. This website does not use advertising or tracking cookies. If you contact us or request an appointment, we collect only the information you choose to send, such as your name, phone number, and email address, and use it only to respond to you and arrange your care. We do not sell your information.</p>
+  <p>{CONFIG['name']} respects your privacy. This website does not use advertising or tracking cookies. If you contact us or join the waitlist, we collect only the information you choose to send, such as your name, phone number, and email address, and use it only to respond to you and to let you know when scheduling opens. We do not sell your information.</p>
   <p>Mobile phone numbers and text messaging consent are never shared with third parties or affiliates for marketing or promotional purposes.</p>
-  <p>Our appointment request form is kept in a secure system covered by HIPAA safeguards. Regular email is less secure, so please use the form or call us rather than emailing detailed medical information.</p>
+  <p>Our waitlist form asks only for contact details. Please do not send medical information through the form or by email.</p>
   <h2>Your health information</h2>
   <p>How we use and protect your health information, and your rights, are described in our <a href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>.</p>
   <h2>Questions</h2>
