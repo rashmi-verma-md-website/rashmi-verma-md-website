@@ -263,7 +263,7 @@ PAGES["about.html"] = (
     <li>Verma R, Wolfe G, Kupersmith MJ. Ocular myasthenia gravis: how effective is low dose prednisone long term? <em>J Neurol Sci.</em> 2020.</li>
     <li>Shah P, Gelnick S, Jonisch J, Verma R. Central retinal vein occlusion following BNT162b2 (Pfizer-BioNTech) COVID-19 mRNA vaccine: a case report. <em>Retinal Cases &amp; Brief Reports.</em> 2021.</li>
   </ol>
-  <p class="pdf-link"><a class="text-link" href="files/a-typical-day-in-neuro-ophthalmology.pdf">Featured reading: A Typical Day in Neuro-Ophthalmology (PDF) →</a></p>
+""" + ('<p class="pdf-link"><a class="text-link" href="files/a-typical-day-in-neuro-ophthalmology.pdf">Featured reading: A Typical Day in Neuro-Ophthalmology (PDF) →</a></p>' if os.path.exists(os.path.join(HERE, "assets", "files", "a-typical-day-in-neuro-ophthalmology.pdf")) else "") + """
 </div></section>
 """ + cta_band("Schedule a consultation", "Dr. Verma personally sees every patient. Join the waitlist and her office will call you when scheduling opens."),
 )
