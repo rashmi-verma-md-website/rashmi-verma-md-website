@@ -164,7 +164,7 @@ PAGES["index.html"] = (
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <p class="eyebrow">Rashmi Verma, MD · Long Island, New York</p>
-    <h1>Specialized vision and neurological care for adults and children</h1>
+    <h1>Specialized neuro-ophthalmic care for adults and children</h1>
     <p class="lead">Neuro-ophthalmology is a subspecialty that cares for diseases affecting both the eyes and the brain, and the connections between them. When a visit to the neurologist or the ophthalmologist hasn't given you answers, it is time to see a neuro-ophthalmologist.</p>
     <p>Dr. Verma is a board-certified neurologist with dual fellowship training in neuro-ophthalmology and pediatric ophthalmology. She provides expert diagnosis and compassionate care for adult and pediatric patients.</p>
     <div class="btn-row">{waitlist_cta()}<a class="btn btn-ghost" href="about.html">Meet Dr. Verma</a></div>
