@@ -175,7 +175,7 @@ PAGES["index.html"] = (
 <section class="section"><div class="wrap">
   <p class="eyebrow">Conditions treated</p>
   <h2>Understanding your diagnosis</h2>
-  <p class="section-lead">Neuro-ophthalmic conditions can be complex and worrying. Dr. Verma takes time to explain your diagnosis in plain language and guide you through your care.</p>
+  <p class="section-lead">Neuro-ophthalmic conditions can be complex, hard to understand, and sometimes vision-threatening. Dr. Verma takes time to explain your diagnosis in simple, easy-to-understand language and guide you through every step of your care.</p>
   <div class="cards four">
     <article class="card"><h3>Optic neuritis</h3><p>Inflammation of the optic nerve that causes sudden vision loss or pain with eye movement, often associated with multiple sclerosis or other autoimmune conditions.</p></article>
     <article class="card"><h3>Papilledema and intracranial pressure</h3><p>Swelling of the optic nerve head from raised pressure inside the skull, which can threaten vision if not diagnosed and managed promptly.</p></article>
