@@ -27,7 +27,7 @@ CONFIG = {
     "waitlist_form_url": "https://forms.gle/c28T2jiUxJEGUNZc8",
     "jobs_form_url": "https://forms.gle/1Eg6ckXyhyy7jyCj7",
     "npp_effective": "November 16, 2026",
-    "legal_entity": "",   # PLLC legal name once formed
+    "legal_entity": "Rashmi Verma MD PLLC",   # PLLC legal name once formed
     "year": "2026",
 }
 
