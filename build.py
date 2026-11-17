@@ -129,7 +129,7 @@ def page(filename, title, description, body, active=None):
       <p class="footer-head">Careers</p>
       <p>We're hiring part-time ophthalmic technicians and front desk staff. <a href="careers.html">See open positions</a>.</p>
       <p class="footer-head">Emergencies</p>
-      <p>For sudden vision loss, new double vision, or other sudden neurological symptoms, call 911 or go to the nearest emergency room.</p>
+      <p>For a severe headache, sudden vision loss, new double vision, or other sudden neurological symptoms, call 911 or go to the nearest emergency room.</p>
     </div>
   </div>
   <div class="wrap footer-legal">
@@ -444,7 +444,7 @@ PAGES["contact.html"] = (
     <h2>Join the waitlist</h2>
     <p>We are not yet seeing patients. Join the waitlist and we'll call you as soon as scheduling opens. Joining does not book an appointment.</p>
     {waitlist_cta() if CONFIG['waitlist_form_url'] else f'<p>Email <a href="mailto:{CONFIG["email"]}?subject=Waitlist">{CONFIG["email"]}</a> with your name and the best phone number to reach you. Please do not include medical details.</p>'}
-    <div class="note warn"><h3>Don't wait with sudden symptoms</h3><p>If you have sudden vision loss, new double vision, or other sudden neurological symptoms, call 911, go to the nearest emergency room, or contact your current doctor today.</p></div>
+    <div class="note warn"><h3>Don't wait with sudden symptoms</h3><p>If you have a severe headache, sudden vision loss, new double vision, or other sudden neurological symptoms, call 911, go to the nearest emergency room, or contact your current doctor today.</p></div>
   </div>
   <div>
     <h2>Office information</h2>
