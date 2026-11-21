@@ -46,6 +46,7 @@ LEGAL = [
     ("notice-of-privacy-practices.html", "Notice of Privacy Practices"),
     ("sms-terms.html", "SMS Terms"),
     ("nondiscrimination.html", "Nondiscrimination & Language Assistance"),
+    ("accessibility.html", "Accessibility & Language Help"),
     ("good-faith-estimate.html", "Good Faith Estimate"),
 ]
 
@@ -74,6 +75,29 @@ def waitlist_cta(label="Join the Waitlist"):
     if url:
         return f'<a class="btn btn-primary" href="{e(url)}" target="_blank" rel="noopener">{label}</a>'
     return f'<a class="btn btn-primary" href="contact.html#waitlist">{label}</a>'
+
+
+def language_taglines():
+    """Free language help taglines (16 languages) from assets/language-taglines.html.
+    The source has a "[practice phone] (TTY: 711)" placeholder in each line. Until
+    CONFIG phone is set, the call sentence is dropped and the practice email is shown."""
+    src = open(os.path.join(HERE, "assets", "language-taglines.html"), encoding="utf-8").read()
+    phone = CONFIG["phone"]
+    mail = f'<bdi dir="ltr"><a href="mailto:{CONFIG["email"]}">{CONFIG["email"]}</a></bdi>'
+    if phone:
+        return src.replace("[practice phone]", e(phone))
+    out = []
+    for line in src.splitlines():
+        i = line.find("<bdi")
+        if line.startswith("<p ") and i != -1:
+            head = line[:i]
+            cut = max(head.rfind(t) + len(t) for t in (". ", "。", "। ", "۔ ") if head.rfind(t) != -1)
+            if 'lang="en"' in line:
+                line = head[:cut] + f"Email {mail} or ask our front desk.</p>"
+            else:
+                line = head[:cut].rstrip() + f" {mail}</p>"
+        out.append(line)
+    return "\n".join(out)
 
 
 def page(filename, title, description, body, active=None):
@@ -597,6 +621,24 @@ PAGES["nondiscrimination.html"] = (
   <p>{CONFIG['name']} complies with applicable federal civil rights laws and does not discriminate on the basis of race, color, national origin, age, disability, or sex (including sex characteristics, sexual orientation, and gender identity).</p>
   <p>We provide free aids and services to people with disabilities to communicate effectively with us, and free language assistance services, including qualified interpreters, to people whose primary language is not English. To request these services, email <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a>.</p>
   <p>If you believe we have failed to provide these services or discriminated in another way, you can file a complaint with us at the email above, or with the U.S. Department of Health and Human Services, Office for Civil Rights, at <a href="https://ocrportal.hhs.gov/ocr/portal/lobby.jsf">ocrportal.hhs.gov</a> or 1-800-368-1019 (TDD 800-537-7697).</p>
+  {language_taglines()}
+</div></section>
+""",
+)
+
+PAGES["accessibility.html"] = (
+    "Accessibility & Language Help",
+    "Accessibility, service animals, and free language help at Dr. Rashmi Verma's office.",
+    f"""
+<section class="page-head"><div class="wrap narrow"><h1>Accessibility and Language Help</h1><p class="lead">We want every patient to be able to reach us, understand their care, and visit comfortably.</p></div></section>
+<section class="section"><div class="wrap narrow prose">
+  <h2>At our office</h2>
+  <p>Free aids and services are available, including large-print materials and qualified sign language interpreters. If you need an accommodation for your visit, please tell us when you are contacted to schedule, or email <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a>.</p>
+  <p><strong>Service animals welcome. Pets and emotional support animals are not permitted.</strong></p>
+  <h2>This website</h2>
+  <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. If you have trouble using any part of this site, email <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a> and we will help you get the information another way.</p>
+  {language_taglines()}
+  <p>See also our <a href="nondiscrimination.html">Notice of Nondiscrimination</a>.</p>
 </div></section>
 """,
 )
