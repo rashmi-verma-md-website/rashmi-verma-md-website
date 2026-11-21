@@ -688,6 +688,18 @@ def main():
         f.write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     with open(os.path.join(OUT, "robots.txt"), "w") as f:
         f.write(f"User-agent: *\nAllow: /\nSitemap: {CONFIG['domain']}/sitemap.xml\n")
+    # Short link printed on business cards (QR code): /refer -> waitlist/referral form.
+    # 302 so the target can change later without reprinting cards.
+    target = CONFIG["waitlist_form_url"]
+    with open(os.path.join(OUT, "_redirects"), "w") as f:
+        f.write(f"/refer {target} 302\n/refer/ {target} 302\n")
+    # Fallback page in case the redirect rules are not applied.
+    os.makedirs(os.path.join(OUT, "refer"), exist_ok=True)
+    with open(os.path.join(OUT, "refer", "index.html"), "w") as f:
+        f.write(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
+                f'<meta http-equiv="refresh" content="0; url={e(target)}"><title>Refer a patient</title>'
+                f'<script>location.replace({target!r});</script></head>'
+                f'<body><p>Opening the referral form… <a href="{e(target)}">Continue</a></p></body></html>')
     print("Built", len(PAGES) + 1, "pages into", OUT)
 
 
