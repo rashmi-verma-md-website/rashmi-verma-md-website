@@ -436,11 +436,12 @@ PAGES["for-physicians.html"] = (
 </div></section>
 <section class="section"><div class="wrap two-col">
   <div>
-    <div class="note"><h3>Not yet accepting referrals</h3><p>The office is opening soon and is not yet seeing patients. Until then, please continue to refer patients to their current care. Patients can join our waitlist, and we will post referral details here when the office opens.</p></div>
-    <h2>How to refer, once we open</h2>
+    <div class="note"><h3>Referrals welcome for our waitlist</h3><p>The office is opening soon and is not yet seeing patients. You can refer patients now: add them to our waitlist with the <a href="refer/">referral form</a>, and we will contact each patient when scheduling opens. Patients who need urgent care should continue with their current doctors or go to the emergency room.</p></div>
+    <p><a class="btn btn-primary" href="refer/">Refer a patient</a></p>
+    <h2>How to refer</h2>
     <ol>
-      <li>Send the referral to our office{(" by fax at " + e(CONFIG['fax'])) if CONFIG['fax'] else ""}{(" or call " + e(CONFIG['phone'])) if CONFIG['phone'] else ""}. Referral lines open when the office opens.</li>
-      <li>Include the reason for referral, recent eye exam notes, visual fields or OCT if available, and any MRI or CT reports.</li>
+      <li>Complete the short <a href="refer/">referral form</a> (neuroophtho.com/refer) with the patient's name and phone number and your office's contact details.</li>
+      <li>Please don't send medical records through the form. We will ask for the reason for referral, recent eye exam notes, visual fields or OCT, and any MRI or CT reports when we schedule{(", by fax at " + e(CONFIG['fax'])) if CONFIG['fax'] else ""}.</li>
       <li>We contact the patient to schedule and confirm insurance.</li>
     </ol>
     <h2>After the visit</h2>
@@ -484,7 +485,7 @@ PAGES["contact.html"] = (
     <h2>Office information</h2>
     {contact_lines()}
     <h3>Referrals</h3>
-    <p>Physicians: see <a href="for-physicians.html">For Physicians</a>.</p>
+    <p>Physicians can add patients to our waitlist with the <a href="refer/">referral form</a>. See <a href="for-physicians.html">For Physicians</a>.</p>
   </div>
 </div></section>
 """,
