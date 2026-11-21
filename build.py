@@ -19,12 +19,12 @@ CONFIG = {
     "email": "info@neuroophtho.com",
     "phone": "",          # e.g. "(516) 555-0100" — leave empty to hide
     "fax": "",            # e.g. "(516) 555-0101" — leave empty to hide
-    "address": "",        # e.g. "123 Main Street, Suite 200, Syosset, NY 11791"
+    "address": "",        # keep empty: Vedant decided (2026-11-21) no street address on the site
     "hours": "",          # e.g. "Monday to Friday, 8:30 am to 5:00 pm"
     "opening": "",         # e.g. "January 2027"; empty shows "opening soon"
     # Google Form (from the practice's Google Workspace, covered by the BAA).
     # Leave empty to show the email fallback instead of a form button.
-    "waitlist_form_url": "https://forms.gle/c28T2jiUxJEGUNZc8",
+    "waitlist_form_url": "https://forms.gle/bexYWKG3Z68H5Tz46",
     "jobs_form_url": "https://forms.gle/1Eg6ckXyhyy7jyCj7",
     "npp_effective": "November 16, 2026",
     "legal_entity": "Rashmi Verma MD PLLC",   # PLLC legal name once formed
