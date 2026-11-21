@@ -106,7 +106,7 @@ def page(filename, title, description, body, active=None):
         f'<a href="{href}"{" aria-current=\"page\"" if href == active else ""}>{label}</a>'
         for href, label in NAV
     )
-    legal = " · ".join(f'<a href="{h}">{l}</a>' for h, l in LEGAL)
+    legal = " · ".join(f'<a href="{h}">{l}</a>' for h, l in LEGAL) + ' · <a href="es.html" lang="es" hreflang="es">Español</a>'
     entity = f"{e(c['legal_entity'])} · " if c["legal_entity"] else ""
     full_title = f"{title} | {c['name']}" if filename != "index.html" else f"{c['name']} | Neuro-Ophthalmologist on Long Island, NY"
     canonical = f"{c['domain']}/{'' if filename == 'index.html' else filename}"
@@ -659,6 +659,27 @@ PAGES["good-faith-estimate.html"] = (
   </ul>
   <p>For questions or more information about your right to a Good Faith Estimate, visit <a href="https://www.cms.gov/nosurprises">www.cms.gov/nosurprises</a> or call 1-800-985-3059.</p>
 </div></section>
+""",
+)
+
+PAGES["es.html"] = (
+    "Información en español",
+    "Información en español sobre la consulta de neurooftalmología de la Dra. Rashmi Verma en Long Island.",
+    f"""
+<div lang="es">
+<section class="page-head"><div class="wrap narrow"><p class="eyebrow">Español</p><h1>Información en español</h1>
+  <p class="lead">Rashmi Verma, MD, es neurooftalmóloga en Long Island. Atiende problemas de la vista relacionados con el cerebro y los nervios, como pérdida de visión, visión doble, inflamación del nervio óptico, presión alta dentro del cráneo y párpados caídos.</p></div></section>
+<section class="section"><div class="wrap narrow prose">
+  <h2>Ayuda gratis con el idioma</h2>
+  <p>Ofrecemos intérpretes de español sin costo en cada visita, en persona, por teléfono o por video. Nuestros formularios para pacientes nuevos y nuestro Aviso de prácticas de privacidad están disponibles en español.</p>
+  <h2>Cómo hacer una cita</h2>
+  <p>Estamos abriendo pronto. Para entrar en la lista de espera, use nuestro <a href="{e(CONFIG['waitlist_form_url'])}" target="_blank" rel="noopener">formulario en línea</a> o escríbanos a <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a>. Si su médico le refiere, puede usar el <a href="refer/">formulario de referencia</a>.</p>
+  <div class="btn-row">{waitlist_cta("Unirse a la lista de espera")}</div>
+  <h2>Accesibilidad</h2>
+  <p>Los animales de servicio son bienvenidos. No se permiten mascotas ni animales de apoyo emocional. Si necesita formularios en letra grande u otra ayuda, avísenos.</p>
+  <p class="note warn">Si tiene un dolor de cabeza intenso, pérdida repentina de la visión, visión doble nueva, debilidad, adormecimiento, dificultad para hablar u otra emergencia, llame al 911 o vaya a la sala de emergencias más cercana.</p>
+</div></section>
+</div>
 """,
 )
 
