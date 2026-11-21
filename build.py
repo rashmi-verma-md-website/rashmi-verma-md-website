@@ -77,6 +77,16 @@ def waitlist_cta(label="Join the Waitlist"):
     return f'<a class="btn btn-primary" href="contact.html#waitlist">{label}</a>'
 
 
+def help_contact():
+    """'Email ... or call ... (TTY: dial 711).' Phone part appears only once CONFIG phone is set."""
+    c = CONFIG
+    mail = f'<a href="mailto:{c["email"]}">{c["email"]}</a>'
+    if c["phone"]:
+        tel = "".join(ch for ch in c["phone"] if ch.isdigit())
+        return f'Email {mail} or call <a href="tel:+1{tel}">{e(c["phone"])}</a> (TTY: dial 711).'
+    return f"Email {mail}."
+
+
 def language_taglines():
     """Free language help taglines (16 languages) from assets/language-taglines.html.
     The source has a "[practice phone] (TTY: 711)" placeholder in each line. Until
@@ -628,17 +638,26 @@ PAGES["nondiscrimination.html"] = (
 
 PAGES["accessibility.html"] = (
     "Accessibility & Language Help",
-    "Accessibility, service animals, and free language help at Dr. Rashmi Verma's office.",
+    "Accessibility statement, office accommodations, service animals, and free language help at Dr. Rashmi Verma's office.",
     f"""
-<section class="page-head"><div class="wrap narrow"><h1>Accessibility and Language Help</h1><p class="lead">We want every patient to be able to reach us, understand their care, and visit comfortably.</p></div></section>
+<section class="page-head"><div class="wrap narrow"><h1>Accessibility and Language Help</h1><p class="lead">{CONFIG['name']} wants everyone, including people with disabilities, to be able to use this website and our office.</p></div></section>
 <section class="section"><div class="wrap narrow prose">
-  <h2>At our office</h2>
-  <p>Free aids and services are available, including large-print materials and qualified sign language interpreters. If you need an accommodation for your visit, please tell us when you are contacted to schedule, or email <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a>.</p>
-  <p><strong>Service animals welcome. Pets and emotional support animals are not permitted.</strong></p>
-  <h2>This website</h2>
-  <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. If you have trouble using any part of this site, email <a href="mailto:{CONFIG['email']}">{CONFIG['email']}</a> and we will help you get the information another way.</p>
+  <h2>Our website</h2>
+  <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA. We test the site with automated accessibility tools and fix problems we find. Some content from other companies, such as online forms, may not be fully under our control; we will give you the same information another way if it is hard to use.</p>
+  <h2>In our office</h2>
+  <ul>
+    <li>Free sign language and spoken language interpreters, by request.</li>
+    <li>Large-print copies of all patient forms and our Notice of Privacy Practices. Spanish versions are also available.</li>
+    <li>Help reading or filling in forms.</li>
+    <li>A wheelchair-accessible route to the front desk, waiting room, an exam room and the restroom.</li>
+    <li><strong>Service animals are welcome. Pets and emotional support animals are not permitted.</strong></li>
+  </ul>
+  <h2>Need help or found a problem?</h2>
+  <p>If anything on this website or in our office is hard for you to use, please tell us. {help_contact()} Tell us the page or form and the problem. We will reply within 5 business days and give you the information in a way that works for you.</p>
+  <p>You may also file a complaint with the U.S. Department of Health and Human Services, Office for Civil Rights, at <a href="https://www.hhs.gov/ocr/complaints">www.hhs.gov/ocr/complaints</a> or 1-800-368-1019 (TDD: 1-800-537-7697).</p>
   {language_taglines()}
   <p>See also our <a href="nondiscrimination.html">Notice of Nondiscrimination</a>.</p>
+  <p><em>Last reviewed: November 2026.</em></p>
 </div></section>
 """,
 )
