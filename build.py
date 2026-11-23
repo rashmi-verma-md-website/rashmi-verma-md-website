@@ -305,7 +305,7 @@ PAGES["about.html"] = (
 )
 
 COND = [
-    ("Optic nerve", "Optic neuritis", "Inflammation of the optic nerve, often causing sudden vision loss, pain with eye movement, and faded colors. Frequently associated with multiple sclerosis."),
+    ("Optic nerve", "Optic neuritis", "Inflammation of the optic nerve, often causing sudden vision loss, pain with eye movement, and faded colors. Frequently associated with multiple sclerosis and other demyelinating diseases of the brain and spine."),
     ("Optic nerve", "Papilledema and idiopathic intracranial hypertension (IIH)", "Swelling of the optic disc from raised pressure inside the skull. IIH is a common cause, particularly in women of childbearing age, and can lead to permanent vision loss if untreated."),
     ("Optic nerve", "Ischemic and other optic neuropathies", "Damage to the optic nerve from reduced blood flow (AION, PION, including evaluation for giant cell arteritis), compression, hereditary conditions such as Leber's, or toxic and nutritional causes."),
     ("Eye movement", "Double vision (diplopia)", "Seeing two images of one object, caused by misalignment of the eyes from problems with the nerves or muscles that move them. It can be a sign of a serious neurological condition."),
