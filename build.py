@@ -279,7 +279,7 @@ PAGES["about.html"] = (
 <section class="section"><div class="wrap">
   <h2>Areas of expertise</h2>
   <div class="cards two">
-    <article class="card"><h3>Idiopathic intracranial hypertension (IIH)</h3><p>A special interest in the medical and surgical management of IIH in adults and children, including papilledema evaluation, weight management, medication, and surgery when indicated.</p></article>
+    <article class="card"><h3>Idiopathic intracranial hypertension (IIH)</h3><p>A special interest in the medical management of IIH in both adults and children, including papilledema evaluation, testing, medication, and coordinating weight management and surgery when indicated.</p></article>
     <article class="card"><h3>Pediatric neuro-ophthalmology</h3><p>Fellowship-trained care for children with optic nerve abnormalities, visual field defects, nystagmus, strabismus, and other conditions, with a family-centered approach.</p></article>
     <article class="card"><h3>Cranial nerve palsies and myasthenia gravis</h3><p>Diagnosis and management of double vision, cranial nerve palsies, and ocular myasthenia gravis.</p></article>
     <article class="card"><h3>Vision loss after stroke</h3><p>Assessment and rehabilitation planning for visual field loss after stroke or other events affecting the visual pathway.</p></article>
