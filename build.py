@@ -282,7 +282,7 @@ PAGES["about.html"] = (
     <article class="card"><h3>Idiopathic intracranial hypertension (IIH)</h3><p>A special interest in the medical management of IIH in both adults and children, including papilledema evaluation, testing, medication, and coordinating weight management and surgery when indicated.</p></article>
     <article class="card"><h3>Pediatric neuro-ophthalmology</h3><p>Fellowship-trained care for children with optic nerve abnormalities, visual field defects, nystagmus, strabismus, and other conditions related to neuro-ophthalmic diseases, encompassing a family-centered approach.</p></article>
     <article class="card"><h3>Cranial nerve palsies and myasthenia gravis</h3><p>Diagnosis and management of double vision, lid droop (ptosis), cranial nerve palsies caused by mini-stroke, ischemic stroke, trauma, brain tumors, and other conditions, and ocular myasthenia gravis.</p></article>
-    <article class="card"><h3>Vision loss after stroke</h3><p>Assessment and rehabilitation planning for visual field loss after stroke or other events affecting the visual pathway.</p></article>
+    <article class="card"><h3>Vision loss after stroke</h3><p>Assessment, management, counseling, and rehabilitation planning for visual field loss after stroke or other neurological events affecting the visual pathway, or the connections between the eyes and brain.</p></article>
   </div>
 </div></section>
 
