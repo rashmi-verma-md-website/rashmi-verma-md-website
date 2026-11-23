@@ -258,7 +258,7 @@ PAGES["about.html"] = (
     <li>Northwell Health, Donald and Barbara Zucker School of Medicine at Hofstra/Northwell</li>
     <li>Saint Louis University School of Medicine</li>
     <li>Montefiore Medical Center, Albert Einstein College of Medicine</li>
-    <li>Stony Brook University, Renaissance School of Medicine (Director of Neuro-Ophthalmology, 2026)</li>
+    <li>Stony Brook University, Renaissance School of Medicine (Director of Neuro-Ophthalmology)</li>
   </ul>
   <p>She has trained both ophthalmology and neurology residents and taught medical students throughout her career, and has given more than 50 invited lectures, Grand Rounds, and presentations at national and international meetings. She is a Fellow of the North American Neuro-Ophthalmology Society (NANOS), serves on the abstract committee for the journal <em>Neuro-Ophthalmology</em>, and reviews for the <em>Journal of Neuro-Ophthalmology</em> and the <em>Oman Journal of Ophthalmology</em>.</p>
 </div></section>
