@@ -6,6 +6,7 @@ Every page shares the header, footer and styles. To change a phone number,
 address or the waitlist form link, edit CONFIG and rebuild.
 """
 import html
+from condition_pages import CONDITION_PAGES
 import os
 import shutil
 
@@ -211,10 +212,10 @@ PAGES["index.html"] = (
   <h2>Understanding your diagnosis</h2>
   <p class="section-lead">Neuro-ophthalmic conditions can be complex, hard to understand, and sometimes vision-threatening. Dr. Verma takes time to explain your diagnosis in simple, easy-to-understand language and guide you through every step of your care.</p>
   <div class="cards four">
-    <article class="card"><h3>Optic neuritis</h3><p>Inflammation of the optic nerve that causes sudden vision loss or pain with eye movement, often associated with multiple sclerosis or other autoimmune conditions.</p></article>
-    <article class="card"><h3>Papilledema and intracranial pressure</h3><p>Swelling of the optic nerve head from raised pressure inside the skull, which can threaten vision if not diagnosed and managed promptly.</p></article>
-    <article class="card"><h3>Double vision (diplopia)</h3><p>Seeing two images of one object, from nerve palsies, muscle disorders, or neurological conditions affecting eye alignment.</p></article>
-    <article class="card"><h3>Visual field loss</h3><p>Loss of side or central vision that can signal a problem along the visual pathway from the eye to the brain, including stroke or tumors.</p></article>
+    <a class="card card-link" href="optic-neuritis.html"><h3>Optic neuritis</h3><p>Inflammation of the optic nerve that causes sudden vision loss or pain with eye movement, often associated with multiple sclerosis or other autoimmune conditions.</p><span class="more" aria-hidden="true">Learn more →</span></a>
+    <a class="card card-link" href="papilledema-iih.html"><h3>Papilledema and intracranial pressure</h3><p>Swelling of the optic nerve head from raised pressure inside the skull, which can threaten vision if not diagnosed and managed promptly.</p><span class="more" aria-hidden="true">Learn more →</span></a>
+    <a class="card card-link" href="double-vision.html"><h3>Double vision (diplopia)</h3><p>Seeing two images of one object, from nerve palsies, muscle disorders, or neurological conditions affecting eye alignment.</p><span class="more" aria-hidden="true">Learn more →</span></a>
+    <a class="card card-link" href="visual-field-loss.html"><h3>Visual field loss</h3><p>Loss of side or central vision that can signal a problem along the visual pathway from the eye to the brain, including stroke or tumors.</p><span class="more" aria-hidden="true">Learn more →</span></a>
   </div>
   <p><a class="text-link" href="conditions.html">View all conditions →</a></p>
 </div></section>
@@ -320,6 +321,45 @@ COND = [
     ("Other", "Migraine with visual symptoms", "Visual aura and other visual disturbances that need evaluation to rule out other causes."),
 ]
 
+COND_LINKS = {
+    "Optic neuritis": "optic-neuritis",
+    "Papilledema and idiopathic intracranial hypertension (IIH)": "papilledema-iih",
+    "Double vision (diplopia)": "double-vision",
+    "Visual field loss": "visual-field-loss",
+}
+
+
+def cond_card(t, n, d):
+    slug = COND_LINKS.get(n)
+    if slug:
+        return (f'<a class="card card-link" href="{slug}.html"><p class="tag">{e(t)}</p><h3>{e(n)}</h3>'
+                f'<p>{e(d)}</p><span class="more" aria-hidden="true">Learn more →</span></a>')
+    return f'<article class="card"><p class="tag">{e(t)}</p><h3>{e(n)}</h3><p>{e(d)}</p></article>'
+
+
+def condition_page(slug, c):
+    secs = "".join(f"<h2>{h}</h2>\n{body}\n" for h, body in c["sections"])
+    return (
+        c["title"],
+        c["description"],
+        f"""
+<section class="page-head"><div class="wrap narrow">
+  <p class="eyebrow"><a href="conditions.html">Conditions we treat</a></p>
+  <h1>{c['title']}</h1>
+  <p class="lead">{c['summary']}</p>
+</div></section>
+<section class="section"><div class="wrap narrow prose">
+  <div class="note warn"><h2 class="note-title">When to get emergency care</h2><p>{c['urgent']}</p></div>
+  {secs}
+  <h2>How Dr. Verma can help</h2>
+  <p>Dr. Verma is trained in both neurology and neuro-ophthalmology. She looks at the eye, the optic nerve and the brain together, explains your results in plain language, and works closely with your eye doctor, neurologist and other specialists.</p>
+  <p class="disclaimer">This page is general information and is not medical advice. Please talk with a doctor about your own symptoms.</p>
+  <p><a class="text-link" href="conditions.html">← All conditions</a></p>
+</div></section>
+""" + cta_band("Concerned about your vision?", "Join our waitlist and we'll contact you when scheduling opens."),
+    )
+
+
 PAGES["conditions.html"] = (
     "Conditions Treated",
     "Neuro-ophthalmic conditions Dr. Rashmi Verma treats in adults and children: optic neuritis, papilledema and IIH, double vision, visual field loss, blepharospasm and more.",
@@ -336,11 +376,14 @@ PAGES["conditions.html"] = (
 <section class="section alt"><div class="wrap">
   <h2>Conditions we diagnose and treat</h2>
   <div class="cards three">
-""" + "".join(f'<article class="card"><p class="tag">{e(t)}</p><h3>{e(n)}</h3><p>{e(d)}</p></article>' for t, n, d in COND) + """
+""" + "".join(cond_card(t, n, d) for t, n, d in COND) + """
   </div>
 </div></section>
 """ + cta_band("Not sure if your symptoms are neuro-ophthalmic?", "Many patients come to Dr. Verma after seeing other specialists without a clear diagnosis. If you have unexplained vision changes, eye movement problems, or vision symptoms with neurological complaints, an evaluation may provide answers."),
 )
+
+for _slug, _c in CONDITION_PAGES.items():
+    PAGES[f"{_slug}.html"] = condition_page(_slug, _c)
 
 SERV = [
     ("Comprehensive neuro-ophthalmic evaluation", "A detailed exam of the visual system and its neurological connections: visual acuity, color vision, pupils, eye movements, and the optic nerve. Dr. Verma combines the eye exam with a neurological assessment to find where the problem lies, whether in the eye, optic nerve, visual pathway, or brain.", "Unexplained vision loss, visual field defects, double vision, optic nerve abnormalities, or vision symptoms with neurological complaints."),
