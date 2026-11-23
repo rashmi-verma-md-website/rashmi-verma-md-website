@@ -317,6 +317,7 @@ COND = [
     ("Other", "Unexplained vision loss", "Vision changes that a standard eye exam does not explain."),
     ("Other", "Unequal or abnormal pupils", "Including anisocoria and Horner syndrome."),
     ("Other", "Migraine with visual symptoms", "Visual aura and other visual disturbances that need evaluation to rule out other causes."),
+    ("Other", "Visual snow", "A persistent positive visual phenomenon, not caused by migraine headaches, seen in people with and without migraine. It looks like TV static across the entire visual field, at all times, with the eyes open or closed."),
 ]
 
 PAGES["conditions.html"] = (
