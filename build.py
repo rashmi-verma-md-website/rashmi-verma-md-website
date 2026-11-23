@@ -203,7 +203,7 @@ PAGES["index.html"] = (
     <p>Dr. Verma is a board-certified neurologist with dual fellowship training in neuro-ophthalmology and pediatric ophthalmology. She provides expert diagnosis and compassionate care for adult and pediatric patients.</p>
     <div class="btn-row">{waitlist_cta()}<a class="btn btn-ghost" href="about.html">Meet Dr. Verma</a></div>
   </div>
-  <figure class="portrait"><img src="images/rashmi-verma-portrait.jpg" alt="Dr. Rashmi Verma, MD, neuro-ophthalmologist" width="480" height="720"></figure>
+  <figure class="portrait"><img src="images/rashmi-verma-portrait-home.jpg" alt="Dr. Rashmi Verma, MD, neuro-ophthalmologist" width="480" height="720"></figure>
 </div></section>
 
 <section class="section"><div class="wrap">
