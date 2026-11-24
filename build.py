@@ -446,7 +446,7 @@ PAGES["for-physicians.html"] = (
       <li>We contact the patient to schedule and confirm insurance.</li>
     </ol>
     <h2>After the visit</h2>
-    <p>You receive a consultation note with the diagnosis, test results, and plan. Patients return to your care for ongoing eye or neurological management, with co-management where it helps.</p>
+    <p>You will promptly receive a consultation note with the diagnosis, test results, and plan. Patients return to your care for ongoing ophthalmic or neurological management, with continued co-management where it helps.</p>
   </div>
   <div>
     <h2>Common reasons to refer</h2>
