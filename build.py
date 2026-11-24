@@ -456,6 +456,7 @@ PAGES["for-physicians.html"] = (
       <li>New double vision, ptosis, or anisocoria</li>
       <li>Suspected optic neuritis or demyelinating disease</li>
       <li>Known or suspected IIH, adult or pediatric</li>
+      <li>Subjective visual disturbance or visual snow</li>
       <li>Blepharospasm or hemifacial spasm for Botox</li>
       <li>Visual complaints after stroke, head injury, or brain surgery</li>
       <li>Pediatric optic nerve abnormalities, nystagmus, or strabismus with neurological features</li>
