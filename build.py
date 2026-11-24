@@ -395,10 +395,11 @@ PAGES["new-patients.html"] = (
     <ul>
       <li>Photo ID and insurance card(s)</li>
       <li>A referral, if your plan requires one</li>
-      <li>A list of your medications</li>
-      <li>Your glasses and contact lenses</li>
-      <li>MRI or CT reports and images (on disc or a portal link) and recent eye exam records</li>
-      <li>For Workers' Compensation visits: your WCB claim number and the insurance carrier's name and address</li>
+      <li>A list of your eyedrops as well as systemic medications</li>
+      <li>Your glasses prescription, glasses, and contact lenses</li>
+      <li>MRI and/or CT reports and images (on disc or a portal link)</li>
+      <li>Your most recent eye exam records</li>
+      <li>For Workers' Compensation visits: your WCB claim number, the insurance carrier's name and address</li>
     </ul>
   </div>
   <div>
