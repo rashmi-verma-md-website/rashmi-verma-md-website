@@ -314,7 +314,7 @@ COND = [
     ("Visual pathway", "Visual field loss", "Loss of peripheral or central vision from damage to the retina or anywhere along the visual pathway, as far as the back of the brain. The pattern of loss helps locate the underlying problem."),
     ("Visual pathway", "Vision changes after stroke", "Stroke affecting the visual pathways can cause loss of half the visual field (hemianopia), visual neglect, or cortical visual impairment."),
     ("Visual pathway", "Visual snow", "A persistent positive visual phenomenon, not caused by migraine headaches, seen in people with and without migraine. It looks like TV static across the entire visual field, at all times, with the eyes open or closed."),
-    ("Eyelid and face", "Blepharospasm and hemifacial spasm", "Involuntary eyelid closing or twitching of one side of the face, treated with Botox injections in the office."),
+    ("Eyelid and face", "Blepharospasm and hemifacial spasm", "Involuntary eyelid closing on one or both sides, or twitching of one side of the face, treated with Botox injections in the office."),
     ("Other", "Unexplained vision loss", "Vision changes that a standard eye exam does not explain."),
     ("Other", "Unequal or abnormal pupils", "Including anisocoria and Horner syndrome."),
     ("Other", "Migraine with visual symptoms", "Visual aura and other visual disturbances that need evaluation to rule out other causes."),
