@@ -317,7 +317,7 @@ COND = [
     ("Eyelid and face", "Blepharospasm and hemifacial spasm", "Involuntary eyelid closing on one or both sides, or twitching of one side of the face, treated with Botox injections in the office."),
     ("Other", "Unexplained vision loss", "Vision changes that a routine eye exam, or even a visit to other eye specialists, cannot explain."),
     ("Other", "Unequal or abnormal pupils", "Including anisocoria (pupils of different sizes), which is sometimes harmless but can also signal Adie's tonic pupil or, more seriously, Horner syndrome or other neurological conditions."),
-    ("Other", "Migraine with visual symptoms", "Visual aura and other visual disturbances that need evaluation to rule out other causes."),
+    ("Other", "Migraine with visual symptoms", "Visual aura and other visual disturbances that can accompany migraine and need neuro-ophthalmic evaluation to rule out other causes."),
 ]
 
 PAGES["conditions.html"] = (
